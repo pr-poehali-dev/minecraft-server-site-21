@@ -26,20 +26,6 @@ const Index = () => {
       description: "Новые биомы, мобы и предметы уже доступны на сервере!",
       date: "15 октября 2025",
       icon: "Sparkles"
-    },
-    {
-      id: 2,
-      title: "Новый ивент: Битва гильдий",
-      description: "Соревнуйтесь с другими игроками за звание лучшей гильдии сервера",
-      date: "12 октября 2025",
-      icon: "Swords"
-    },
-    {
-      id: 3,
-      title: "Открыт новый мир",
-      description: "Исследуйте ресурсный мир с уникальными структурами и сокровищами",
-      date: "8 октября 2025",
-      icon: "Map"
     }
   ];
 
@@ -102,23 +88,12 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-4xl font-bold text-white">1.20.4</p>
+                  <p className="text-4xl font-bold text-white">1.12.2</p>
                   <p className="text-gray-300 mt-2">Java Edition</p>
                 </CardContent>
               </Card>
 
-              <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] min-w-[200px]">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-[#7CFC00] font-bold text-2xl flex items-center gap-2">
-                    <Icon name="Zap" size={28} />
-                    Режим
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-3xl font-bold text-white">Survival</p>
-                  <p className="text-gray-300 mt-2">Без гриферства</p>
-                </CardContent>
-              </Card>
+
             </div>
           </section>
 
