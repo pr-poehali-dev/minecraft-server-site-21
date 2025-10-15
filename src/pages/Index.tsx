@@ -5,13 +5,30 @@ import Icon from "@/components/ui/icon";
 import { useState, useEffect } from "react";
 
 const Index = () => {
-  const [onlinePlayers, setOnlinePlayers] = useState(127);
+  const [onlinePlayers, setOnlinePlayers] = useState<number | null>(null);
+  const [maxPlayers, setMaxPlayers] = useState(200);
   const serverIp = "dayzm.my-craft.cc";
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setOnlinePlayers(prev => Math.max(100, Math.min(150, prev + Math.floor(Math.random() * 11) - 5)));
-    }, 3000);
+    const fetchServerStatus = async () => {
+      try {
+        const response = await fetch(`https://api.mcsrvstat.us/3/${serverIp}`);
+        const data = await response.json();
+        
+        if (data.online) {
+          setOnlinePlayers(data.players.online);
+          setMaxPlayers(data.players.max);
+        } else {
+          setOnlinePlayers(0);
+        }
+      } catch (error) {
+        console.error('Ошибка получения статуса сервера:', error);
+        setOnlinePlayers(0);
+      }
+    };
+
+    fetchServerStatus();
+    const interval = setInterval(fetchServerStatus, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -89,8 +106,10 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-5xl font-bold text-white">{onlinePlayers}</p>
-                  <p className="text-gray-300 mt-2">из 200</p>
+                  <p className="text-5xl font-bold text-white">
+                    {onlinePlayers === null ? '...' : onlinePlayers}
+                  </p>
+                  <p className="text-gray-300 mt-2">из {maxPlayers}</p>
                 </CardContent>
               </Card>
 
