@@ -59,7 +59,7 @@ const Index = () => {
         <header className="border-b-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-lg">
           <div className="container mx-auto px-4 py-6">
             <h1 className="text-5xl md:text-7xl font-bold text-center text-white tracking-wider drop-shadow-[0_4px_0_rgba(0,0,0,0.5)]">
-              MINECRAFT SERVER
+              DayZM
             </h1>
           </div>
         </header>
