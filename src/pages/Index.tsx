@@ -113,6 +113,38 @@ const Index = () => {
 
           <section>
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-[#7CFC00] drop-shadow-[0_3px_0_rgba(0,0,0,0.5)]">
+              Что нужно для игры на проекте?
+            </h2>
+            
+            <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] max-w-3xl mx-auto mb-12">
+              <CardContent className="pt-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-[#7CFC00] p-3 border-2 border-[#2a2a2a] flex-shrink-0">
+                      <Icon name="Laptop" size={32} className="text-black" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2">Любой лаунчер</h3>
+                      <p className="text-gray-200">Используйте TLauncher, Minecraft Launcher или любой другой на выбор</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="bg-[#7CFC00] p-3 border-2 border-[#2a2a2a] flex-shrink-0">
+                      <Icon name="Smartphone" size={32} className="text-black" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2">Играй с телефона</h3>
+                      <p className="text-gray-200">Minecraft PE поддерживается! Подключайся прямо с мобильного устройства</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          <section>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-[#7CFC00] drop-shadow-[0_3px_0_rgba(0,0,0,0.5)]">
               Новости сервера
             </h2>
             
