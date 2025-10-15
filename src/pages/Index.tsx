@@ -5,8 +5,8 @@ import Icon from "@/components/ui/icon";
 import { useState, useEffect } from "react";
 
 const Index = () => {
-  const [onlinePlayers, setOnlinePlayers] = useState<number | null>(null);
-  const [maxPlayers, setMaxPlayers] = useState(200);
+  const [onlinePlayers, setOnlinePlayers] = useState<number | null>(0);
+  const [maxPlayers, setMaxPlayers] = useState(100);
   const serverIp = "dayzm.my-craft.cc";
 
   useEffect(() => {
