@@ -67,14 +67,14 @@ const Index = () => {
         <main className="container mx-auto px-4 py-12 space-y-12">
           <section className="text-center space-y-6">
             <div className="inline-block border-4 border-[#2a2a2a] bg-[#7CFC00] px-8 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
-              <p className="text-2xl md:text-3xl font-bold text-black font-['Pixelify_Sans']">
+              <p className="text-2xl md:text-3xl font-bold text-black">
                 IP: {serverIp}
               </p>
             </div>
             
             <Button 
               onClick={copyToClipboard}
-              className="bg-[#8B4513] hover:bg-[#6B3410] text-white border-4 border-[#5a3410] text-xl px-8 py-6 font-['Pixelify_Sans'] shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all"
+              className="bg-[#8B4513] hover:bg-[#6B3410] text-white border-4 border-[#5a3410] text-xl px-8 py-6 font-bold shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all"
             >
               <Icon name="Copy" className="mr-2" size={24} />
               Скопировать IP
@@ -83,39 +83,39 @@ const Index = () => {
             <div className="flex justify-center gap-6 flex-wrap mt-8">
               <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] min-w-[200px]">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-[#7CFC00] font-['Pixelify_Sans'] text-2xl flex items-center gap-2">
+                  <CardTitle className="text-[#7CFC00] font-bold text-2xl flex items-center gap-2">
                     <Icon name="Users" size={28} />
                     Игроки онлайн
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-5xl font-bold text-white font-['Pixelify_Sans']">{onlinePlayers}</p>
+                  <p className="text-5xl font-bold text-white">{onlinePlayers}</p>
                   <p className="text-gray-300 mt-2">из 200</p>
                 </CardContent>
               </Card>
 
               <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] min-w-[200px]">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-[#7CFC00] font-['Pixelify_Sans'] text-2xl flex items-center gap-2">
+                  <CardTitle className="text-[#7CFC00] font-bold text-2xl flex items-center gap-2">
                     <Icon name="Globe" size={28} />
                     Версия
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-4xl font-bold text-white font-['Pixelify_Sans']">1.20.4</p>
+                  <p className="text-4xl font-bold text-white">1.20.4</p>
                   <p className="text-gray-300 mt-2">Java Edition</p>
                 </CardContent>
               </Card>
 
               <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] min-w-[200px]">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-[#7CFC00] font-['Pixelify_Sans'] text-2xl flex items-center gap-2">
+                  <CardTitle className="text-[#7CFC00] font-bold text-2xl flex items-center gap-2">
                     <Icon name="Zap" size={28} />
                     Режим
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-3xl font-bold text-white font-['Pixelify_Sans']">Survival</p>
+                  <p className="text-3xl font-bold text-white">Survival</p>
                   <p className="text-gray-300 mt-2">Без гриферства</p>
                 </CardContent>
               </Card>
@@ -123,7 +123,7 @@ const Index = () => {
           </section>
 
           <section>
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-[#7CFC00] font-['Pixelify_Sans'] drop-shadow-[0_3px_0_rgba(0,0,0,0.5)]">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-[#7CFC00] drop-shadow-[0_3px_0_rgba(0,0,0,0.5)]">
               Новости сервера
             </h2>
             
@@ -139,10 +139,10 @@ const Index = () => {
                         <Icon name={item.icon as any} size={32} className="text-black" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-white font-['Pixelify_Sans'] text-xl mb-2">
+                        <CardTitle className="text-white font-bold text-xl mb-2">
                           {item.title}
                         </CardTitle>
-                        <Badge className="bg-[#8B4513] text-white border-2 border-[#5a3410] font-['Pixelify_Sans']">
+                        <Badge className="bg-[#8B4513] text-white border-2 border-[#5a3410] font-semibold">
                           {item.date}
                         </Badge>
                       </div>
@@ -161,7 +161,7 @@ const Index = () => {
           <section className="text-center pb-12">
             <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] max-w-2xl mx-auto">
               <CardHeader>
-                <CardTitle className="text-3xl text-[#7CFC00] font-['Pixelify_Sans']">
+                <CardTitle className="text-3xl text-[#7CFC00] font-bold">
                   Присоединяйся к нам!
                 </CardTitle>
               </CardHeader>
@@ -170,11 +170,11 @@ const Index = () => {
                   Играй вместе с друзьями, стройте невероятные постройки и исследуйте огромный мир!
                 </p>
                 <div className="flex justify-center gap-4">
-                  <Button className="bg-[#7CFC00] hover:bg-[#6BEB00] text-black border-4 border-[#5ad000] font-['Pixelify_Sans'] text-lg px-6 py-5 shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all">
+                  <Button className="bg-[#7CFC00] hover:bg-[#6BEB00] text-black border-4 border-[#5ad000] font-bold text-lg px-6 py-5 shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all">
                     <Icon name="MessageCircle" className="mr-2" size={20} />
                     Discord
                   </Button>
-                  <Button className="bg-[#8B4513] hover:bg-[#6B3410] text-white border-4 border-[#5a3410] font-['Pixelify_Sans'] text-lg px-6 py-5 shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all">
+                  <Button className="bg-[#8B4513] hover:bg-[#6B3410] text-white border-4 border-[#5a3410] font-bold text-lg px-6 py-5 shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all">
                     <Icon name="Youtube" className="mr-2" size={20} />
                     YouTube
                   </Button>
