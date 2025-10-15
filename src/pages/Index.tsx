@@ -46,11 +46,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-[#353535] relative overflow-hidden">
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: `url('https://cdn.poehali.dev/files/e5637765-8955-44c2-a8f4-f501be7af055.jpg')`,
-          backgroundSize: '400px',
-          backgroundRepeat: 'repeat'
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
       
