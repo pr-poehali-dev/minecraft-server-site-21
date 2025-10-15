@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const Index = () => {
   const [onlinePlayers, setOnlinePlayers] = useState(127);
-  const serverIp = "mc.server.ru";
+  const serverIp = "dayzm.my-craft.cc";
 
   useEffect(() => {
     const interval = setInterval(() => {
