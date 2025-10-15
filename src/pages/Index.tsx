@@ -103,7 +103,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-4xl font-bold text-white">1.12.2</p>
-                  <p className="text-gray-300 mt-2">Java / Телефоны</p>
+                  <p className="text-gray-300 mt-2">Java Edition</p>
                 </CardContent>
               </Card>
 
