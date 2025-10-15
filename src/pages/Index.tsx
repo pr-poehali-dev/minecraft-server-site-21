@@ -61,49 +61,46 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] relative overflow-hidden">
+    <div className="min-h-screen bg-[#353535] relative overflow-hidden">
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: `url('https://cdn.poehali.dev/files/e5637765-8955-44c2-a8f4-f501be7af055.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'grayscale(0.3) brightness(0.7)'
+          backgroundRepeat: 'no-repeat'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
       
       <div className="relative z-10">
-        <header className="border-b-4 border-[#8B0000] bg-gradient-to-r from-[#2a1a1a] via-[#1a1a1a] to-[#2a1a1a] shadow-2xl">
+        <header className="border-b-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-lg">
           <div className="container mx-auto px-4 py-6">
-            <h1 className="text-5xl md:text-7xl font-bold text-center text-[#ff4444] tracking-wider drop-shadow-[0_4px_8px_rgba(139,0,0,0.8)] relative">
-              <span className="relative z-10">DayZM</span>
-              <div className="absolute inset-0 blur-xl bg-red-600/30 -z-10"></div>
+            <h1 className="text-5xl md:text-7xl font-bold text-center text-white tracking-wider drop-shadow-[0_4px_0_rgba(0,0,0,0.5)]">
+              DayZM
             </h1>
           </div>
         </header>
 
         <main className="container mx-auto px-4 py-12 space-y-12">
           <section className="text-center space-y-6">
-            <div className="inline-block border-4 border-[#8B0000] bg-gradient-to-r from-[#2a1a1a] to-[#1a1a1a] px-8 py-4 shadow-[0_0_20px_rgba(139,0,0,0.5)]">
-              <p className="text-2xl md:text-3xl font-bold text-[#ff4444]">
+            <div className="inline-block border-4 border-[#2a2a2a] bg-[#7CFC00] px-8 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+              <p className="text-2xl md:text-3xl font-bold text-black">
                 IP: {serverIp}
               </p>
             </div>
             
             <Button 
               onClick={copyToClipboard}
-              className="bg-gradient-to-r from-[#8B0000] to-[#660000] hover:from-[#660000] hover:to-[#440000] text-white border-4 border-[#440000] text-xl px-8 py-6 font-bold shadow-[0_0_15px_rgba(139,0,0,0.5)] hover:shadow-[0_0_25px_rgba(139,0,0,0.7)] transition-all"
+              className="bg-[#8B4513] hover:bg-[#6B3410] text-white border-4 border-[#5a3410] text-xl px-8 py-6 font-bold shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all"
             >
               <Icon name="Copy" className="mr-2" size={24} />
               Скопировать IP
             </Button>
 
             <div className="flex justify-center gap-6 flex-wrap mt-8">
-              <Card className="border-4 border-[#8B0000] bg-gradient-to-br from-[#2a1a1a] to-[#1a1a1a] shadow-[0_0_20px_rgba(139,0,0,0.3)] min-w-[200px]">
+              <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] min-w-[200px]">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-[#ff4444] font-bold text-2xl flex items-center gap-2">
+                  <CardTitle className="text-[#7CFC00] font-bold text-2xl flex items-center gap-2">
                     <Icon name="Users" size={28} />
                     Игроки онлайн
                   </CardTitle>
@@ -112,20 +109,20 @@ const Index = () => {
                   <p className="text-5xl font-bold text-white">
                     {onlinePlayers === null ? '...' : onlinePlayers}
                   </p>
-                  <p className="text-gray-400 mt-2">из {maxPlayers}</p>
+                  <p className="text-gray-300 mt-2">из {maxPlayers}</p>
                 </CardContent>
               </Card>
 
-              <Card className="border-4 border-[#8B0000] bg-gradient-to-br from-[#2a1a1a] to-[#1a1a1a] shadow-[0_0_20px_rgba(139,0,0,0.3)] min-w-[200px]">
+              <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] min-w-[200px]">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-[#ff4444] font-bold text-2xl flex items-center gap-2">
+                  <CardTitle className="text-[#7CFC00] font-bold text-2xl flex items-center gap-2">
                     <Icon name="Globe" size={28} />
                     Версия
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-4xl font-bold text-white">1.12.2</p>
-                  <p className="text-gray-400 mt-2">Java Edition</p>
+                  <p className="text-gray-300 mt-2">Java Edition</p>
                 </CardContent>
               </Card>
 
