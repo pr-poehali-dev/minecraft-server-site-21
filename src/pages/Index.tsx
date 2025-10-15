@@ -4,9 +4,20 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { useState, useEffect } from "react";
 
+const API_URL = "https://functions.poehali.dev/f07fd1ad-7793-45cf-9320-9ee01530b3a4";
+
+interface NewsItem {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  icon: string;
+}
+
 const Index = () => {
   const [onlinePlayers, setOnlinePlayers] = useState<number | null>(0);
   const [maxPlayers, setMaxPlayers] = useState(100);
+  const [news, setNews] = useState<NewsItem[]>([]);
   const serverIp = "dayzm.my-craft.cc";
 
   useEffect(() => {
@@ -27,7 +38,18 @@ const Index = () => {
       }
     };
 
+    const fetchNews = async () => {
+      try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        setNews(data);
+      } catch (error) {
+        console.error('Ошибка загрузки новостей:', error);
+      }
+    };
+
     fetchServerStatus();
+    fetchNews();
     const interval = setInterval(fetchServerStatus, 30000);
     return () => clearInterval(interval);
   }, []);
@@ -35,30 +57,6 @@ const Index = () => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(serverIp);
   };
-
-  const news = [
-    {
-      id: 1,
-      title: "Обновление 1.12.2",
-      description: "Новые биомы, мобы и предметы уже доступны на сервере!",
-      date: "15 октября 2025",
-      icon: "Sparkles"
-    },
-    {
-      id: 2,
-      title: "Скоро...",
-      description: "Следите за обновлениями, скоро будут интересные новости!",
-      date: "???",
-      icon: "HelpCircle"
-    },
-    {
-      id: 3,
-      title: "???",
-      description: "Что-то большое готовится... Ждите анонсов!",
-      date: "???",
-      icon: "HelpCircle"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-[#353535] relative overflow-hidden">
@@ -89,13 +87,23 @@ const Index = () => {
               </p>
             </div>
             
-            <Button 
-              onClick={copyToClipboard}
-              className="bg-[#8B4513] hover:bg-[#6B3410] text-white border-4 border-[#5a3410] text-xl px-8 py-6 font-bold shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all"
-            >
-              <Icon name="Copy" className="mr-2" size={24} />
-              Скопировать IP
-            </Button>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Button 
+                onClick={copyToClipboard}
+                className="bg-[#8B4513] hover:bg-[#6B3410] text-white border-4 border-[#5a3410] text-xl px-8 py-6 font-bold shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all"
+              >
+                <Icon name="Copy" className="mr-2" size={24} />
+                Скопировать IP
+              </Button>
+              
+              <Button 
+                onClick={() => window.location.href = '/admin'}
+                className="bg-[#7CFC00] hover:bg-[#6BEB00] text-black border-4 border-[#5ad000] text-xl px-8 py-6 font-bold shadow-[4px_4px_0_rgba(0,0,0,0.3)] hover:shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all"
+              >
+                <Icon name="Settings" className="mr-2" size={24} />
+                Админка
+              </Button>
+            </div>
 
             <div className="flex justify-center gap-6 flex-wrap mt-8">
               <Card className="border-4 border-[#2a2a2a] bg-[#4a4a4a] shadow-[6px_6px_0_rgba(0,0,0,0.3)] min-w-[200px]">
