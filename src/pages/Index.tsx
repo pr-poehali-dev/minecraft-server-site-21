@@ -135,7 +135,7 @@ const Index = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-white mb-2">Играй с телефона</h3>
-                      <p className="text-gray-200">Minecraft PE поддерживается! Подключайся прямо с мобильного устройства</p>
+                      <p className="text-gray-200">Поддерживаются Java лаунчеры для телефона: PojavLauncher и другие</p>
                     </div>
                   </div>
                 </div>
